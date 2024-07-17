@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="styles.css" rel="stylesheet">
+    <title>Technical-Documentation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+  </head>
+  <body>
+    <nav id="navbar">
+      <header class="nav-header">C Documentation</header>
+      <ul id="nav-ul">
+        <li>
+          <a class="nav-link" href="#Introduction">Introduction</a>
+        </li>
+        <li><a class="nav-link" href="#Hello_World">Hello World</a></li>
+        <li><a class="nav-link" href="#C_Variables">C Variables</a> </li>
+        <li><a class="nav-link" href="#Operators">Operators</a></li>
+        <li><a class="nav-link" href="#C_Booleans">C Booleans</a></li>
+        <li><a class="nav-link" href="#If...else">If...else</a></li>
+        <li><a class="nav-link" href="#Switch">Switch</a></li>
+        <li><a class="nav-link" href="#Loop">Loop</a></li>
+        <li><a class="nav-link" href="#Break_and_Continue">Break and Continue</a></li>
+        <li><a class="nav-link" href="#Arrays">Arrays</a></li>
+        <li><a class="nav-link" href="#Strings">Strings</a></li>
+        <li><a class="nav-link" href="#User_Input">User Input</a></li>
+        <li><a class="nav-link" href="#Pointers">Pointers</a></li>
+        <li><a class="nav-link" href="#Functions">Functions</a></li>
+        <li><a class="nav-link" href="#Files">Files</a></li>
+        <li><a class="nav-link" href="#Structure">Structure</a></li>
+        <li><a class="nav-link" href="#Enums">Enums</a></li>
+        <li><a class="nav-link" href="#Reference">Reference</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section id="Introduction" class="main-section">
+        <header>Introduction</header>
+        <article>
+          <p>C is a powerful general-purpose programming language. It can be used to develop software like <strong>operating systems, databases, compilers</strong>, and so on. C programming is an excellent language to learn to program for beginners.</p>
+        <h1>Why Learn C?</h1>
+          <ul>
+            <li>It is one of the most popular programming language in the world and if you know C, you will have no problem learning other popular programming languages such as Java, Python, C++, C#, etc, as the syntax is similar.</li>
+            <li>C is a very fast, compared to other programming languages like <strong>Java</strong> and <strong>Python</strong></li>
+            <li>C is very versatile; it can be used in both applications and technologies.</li>
+          </ul>
+        <h1>What is the difference between C++ and C ?</h1>
+       
+      <li>C++ was developed as an extension of C, and both languages have almost same syntax</li>
+              <li>The main difference between C and C++ is that C++ support classes and objects, while C does not.</li>
+       </ul>
+          </article>  
+      </section>
+       <section id="Hello_World" class="main-section">
+        <header>Hello World</header>
+        <article>
+          <p>To begin your jorney in 'C', simply open a C compiler amd write your very first "Hello World" code.</p>
+          <pre><code>
+    #include &ltstdio.h>
+
+      int main() {
+
+      printf("Hello, world!");
+        return 0;                   
+
+        }                         <span class="green">//output: Hello, world!</span>
+  </code></pre>
+  <p>To avail the output, run it through the respective compiler</p>
+          </article>  
+      </section>
+       <section id="C_Variables" class="main-section">
+        <header>C Variables</header>
+        <article>
+          <p>Variables are the containers for storing data values, like numbers and characters.</p>
+          <p>In C, there are different types of variables (defined with different keywords), for example:</p>
+            <ul>
+              <li><span>int</span>- stores integers (whole numbers), without decimals, such as 123 or -123</li>
+              <li><span>float</span> - stores floating point numbers, with decimals, such as 19.99 or -19.99</li>
+              <li><span>char</span> - stores single characters, such as 'a' or 'B'. Char values are surrounded by single quotes</li>
+              </ul>
+             <code><pre>
+      type variableName = value;</pre></code>   
+             <h1>Format Specifiers:</h1>
+             <p>Format specifiers are used together with the <span>printf()</span> function to tell the compiler what type of data the variable is storing. It is basically a placeholder for the variable value.</p>
+             <p>A format specifier starts with a percentage sign <span>%</span>, followed by a character.</p>
+             <p>For example, to output the value of an <span>int</span> variable, you must use the format specifier <span>%d</span> or <span>%i</span> surrounded by double quotes, inside the <span>printf()</span> function:</p>
+  <code><pre>
+    int myNum = 15;
+    printf("%d", myNum);      <span class="green">// Output: 15</span>
+    </pre></code>
+    <h4>To print other variables, use <span>%c</span> for <span>char</span> and <span>%f</span> for <span>float</span></h4>
+    <code><pre>
+  
+   int myNum = 15;              <span class="green">// Integer (whole number)</span>
+   float myFloatNum = 5.99;     <span class="green">// Floating point number</span>
+   char myLetter = 'D';         <span class="green">// Character</span>
+
+   printf("%d\n", myNum);            
+   printf("%f\n", myFloatNum);
+   printf("%c\n", myLetter);           
+                                      <span class="green">//output: 15</span>
+                                                <span class="green">5.990000</span>
+                                                <span class="green">D</span>
+      </pre></code>
+      <h4>To combine both text and a variable, separate them with a comma inside the <span>printf()</span> function:</h4>
+      <code><pre>
+        int myNum = 15;
+        printf("My favorite number is: %d", myNum);
+        </pre></code>
+        <h1>Variable Names:</h1>
+          <p>All C variables must be identified with <strong>unique names</strong>, these uniquenames are called <strong>identifiers</strong>.</p>
+          <p>It is always recommended to use descriptive names in order to create understandable and maintainable code</p>
+          <h4>The <strong>general rules</strong> for naming variables are:</h4>
+          <ul>
+            <li>Names can contain letters, digits and underscores</li>
+            <li>Names must begin with a letter or an underscore (_)</li>
+            <li>Names are case sensitive (<span>myVar</span> and <span>myvar</span> are different variables)</li>
+            <li>Names cannot contain whitespaces or special characters like <strong>!, #, %,</strong> etc.</li>
+            <li>Reserved words (such as <span>int</span>) cannot be used as names.</li>
+          </ul>
+          </article>  
+      </section>
+       <section id="Operators" class="main-section">
+        <header>Operators</header>
+        <article>
+          <p>Operators are used to perform operations on variables and values.</p>
+          <h4>C divides the operators into the following groups:</h4>
+          <ul>
+            <li>Arithmetic operators</li>
+            <li>Assignment operators</li>
+            <li>Comparison operators</li>
+            <li>Logical operators</li>
+            <li>Bitwise operators</li>
+          </ul>
+          <h1>Arithmetic Operators:</h1>
+          <p>Arithmetic operators are used to perform common mathematical operations.</p>
+          <div class="operators-table" >
+          <img src="https://i.pinimg.com/750x/e8/03/87/e8038779e1899071fcc25d38fafd0957.jpg" alt="Arithmetic operators table">
+          </div>
+          <h1>Assignment Operators:</h1>
+          <p>Assignment operators are used to assign values to variables.</p>
+          <h4>A list of all assignment operators</h4>
+          <div class="operators-table">
+            <img src="https://i.pinimg.com/564x/97/ec/a0/97eca09a9835fb3f0bf9f05763762fcd.jpg" alt="Assignment operators table">
+            </div>
+            <h1 id="comparison-operator">Comparison Operators</h1>
+            <p>Comparison operators are used to compare two values (or variables). This is important in programming, because it helps us to find answers and make decisions.</p>
+            <p>The return value of a comparison is either 1 or 0, which means true (1) or false (0).These values are known as <strong>Boolean values</strong></p>
+            <h4>A list of all comparison operators:</h4>
+            <div class="operators-table">
+              <img src="https://i.pinimg.com/564x/fc/a0/46/fca046607d748484ee5afc5077a20a28.jpg" alt="Comparison operators table">
+              </div>
+              <h1>Logical Operators:</h1>
+              <p>Logical operators are used to determine the logic between variables or values:</p>
+              <div class="operators-table">
+                <img src="https://i.pinimg.com/750x/e1/36/30/e13630c02727285eabc16bd05f539833.jpg" alt="Logical operators table">
+                </div>
+          </article>  
+      </section>
+       <section id="C_Booleans" class="main-section">
+        <header>C Booleans</header>
+        <article>
+          <p>Very often, in programming, you will need a data type that can only have one of two values, like:</p>
+          <ul>
+            <li><strong>YES / NO</strong></li>
+            <li><strong>ON / OFF</strong></li>
+            <li><strong>TRUE / FALSE</strong></li>
+            </ul>
+            <p>For this, C has a bool data type, which is known as <strong>booleans</strong>. Booleans represent values that are either <span>true</span> or <span>false</span>.</p>
+            <h1>Boolean Variables:</h1>
+            <p>In C, the <span>bool</span> type is not a built-in data type, like <span>int</span> or <span>char</span>.</p>
+            <p>It was introduced in C99, and you must import the following header file to use it:</p>
+            <code><pre>
+            #include &ltstdbool.h></pre></code>
+                   <p>A boolean variable is declared with the bool keyword and can only take the values true or false:</p>
+                   <code><pre>
+    bool isProgrammingFun = true;
+    bool isFishTasty = false;</pre></code>
+                   <p>Remember that the boolean values are returned as integers:</p>
+                   <ul>
+                     <li><span>1</span> (or any other number that is not 0) represents <span>true</span></li>
+                     <li><span>0</span> represents <span>false</span></li>
+                   </ul>
+                   <p>Therefore, use must use the <span>%d</span> format specifier to print a boolean value:</p>
+                   <code><pre>
+         bool isProgrammingFun = true;
+         bool isFishTasty = false;
+
+         printf("%d", isProgrammingFun);   <span class="green">// Returns 1 (true)</span>
+         printf("%d", isFishTasty);        <span class="green">// Returns 0 (false)</span>
+                     </pre></code>
+                     <h1>Comparing values and Variables:</h1>
+                     <p>Comparing values are useful in programming, because it helps us to find answers and make decisions.</p>
+                     <p>For example, you can use a <a class="comparison-operator" href="#comparison-operator">comparison operator</a>, such as the <strong>greater than</strong> (<span>></span>) operator, to compare two values:</p>
+                     <code><pre>
+        printf("%d", 10 > 9);     <span class="green">// Returns 1 (true) because 10 is greater than 9</span></pre></code>
+          </article>  
+      </section>
+       <section id="If...else" class="main-section">
+        <header>If...else</header>
+        <article>
+          <p>C supports the usual logical conditions from mathematics:</p>
+          <ul>
+            <li>Less than: <span>a < b</span></li>
+            <li>Less than or equal to: <span>a <= b</span></li>
+            <li>Greater than: <span>a > b</span></li>
+            <li>Greater than or equal to: <span>a >= b</span></li>
+            <li>Equal to <span>a == b</span></li>
+            <li>Not Equal to: <Span>a != b</span></li>
+            </ul>
+            <h4>But, C has the following conditional statements:</h4>
+              <li>Use <span>switch</span> to specify many alternative blocks of code to be executed</li>
+              </ul>
+              <h1>The if Statement:</h1>
+              <p>Use <span>if</span> to specify a block of code to be executed, if a specified condition is <span>true</span></p>
+              <h3>Syntax:</h3>
+              <code><pre>
+       if (condition) {
+
+        <span class="green">// block of code to be executed if the condition is true</span>
+
+      } </pre></code>
+              <h1>The else Statement:</h1>
+              <p>Use <span>else</span> to specify a block of code to be executed, if the condition is <span>false</span></p>
+              <h3>Syntax:</h3>
+              <code><pre>
+       if (condition) {
+
+       <span class="green">// block of code to be executed if the condition is true</span>
+
+     } else {
+
+       <span class="green">// block of code to be executed if the condition is false</span>
+
+     } </pre></code>
+             <h1>The else if statement:</h1>
+             <p>Use <span>else if</span> to specify a new condition to test, if the first condition is <span>false</span></p>
+             <h3>Syntax:</h3>
+             <code><pre>
+        if (condition1) {
+
+        <span class="green">// block of code to be executed if condition1 is true</span>
+
+      } else if (condition2) {
+
+        <span class="green">// block of code to be executed if the condition1 is false and condition2 is true</span>
+
+      } else {
+
+        <span class="green">// block of code to be executed if the condition1 is false and condition2 is false</span> 
+
+      }</pre></code>
+             <h1>Short Hand If Else:</h1>
+              <p>There is also a short-hand if else, which is known as the <strong>ternary operator</strong> because it consists of three operands. It can be used to replace multiple lines of code with a single line. It is often used to replace simple if else statements:</p>
+              <h3>Syntax:</h3>
+              <code><pre>
+        variable = (condition) ? expressionTrue : expressionFalse;</pre></code>
+          </article>  
+      </section>
+       <section id="Switch" class="main-section">
+        <header>Switch</header>
+        <article>
+          <p>Instead of writing many <span>if..else</span> statements, you can use the <span>switch</span> statement.</p>
+          <p>The <span>switch</span> statement selects one of many code blocks to be executed:</p>
+          <code><pre>
+        switch(expression) {
+
+            case x:
+             <span class="green">// code block</span>
+             break;
+
+            case y:
+              <span class="green">// code block</span>
+              break;
+
+           default:
+             <span class="green">// code block</span>
+
+           }</pre></code>
+              <p>This is how it works</p>
+              <ul>
+                <li>The <span>switch</span> expression is evaluated once</li>
+                <li>The value of the expression is compared with the values of each <span>case</span></li>
+                <li>If there is a match, the associated block of code is executed</li>
+                <li>The <span>break</span> statement breaks out of the switch block and stops the execution</li>
+                <li>The <span>default</span> statement is optional, and specifies some code to run if there is no case match</li>
+              </ul>
+          </article>  
+      </section>
+      <section id="Loop" class="main-section">
+        <header>Loop</header>
+        <article>
+          <p>Loops can execute a block of code as long as a specified condition is reached.</p>
+          <p>Loops are handy because they save time, reduce errors, and they make code more readable.</p>
+          <h1>While Loop:</h1>
+          <p>The <span>while loop</span> loops through a block of code as long as a specified condition is <span>true</span>:</p>
+          <h3>Syntax</h3>
+          <code><pre>
+       while (condition) {
+
+          <span class="green">// code block to be executed</span>
+
+        }</pre></code>
+        <h1>The Do/While Loop:</h1>
+        <p>The <span>do/while</span> loop is a variant of the <span>while</span> loop. This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.</p>
+        <h3>Syntax</h3>
+        <code><pre>
+      do {
+
+        <span class="green">// code block to be executed</span>
+
+      }
+
+      while (condition);</pre></code>
+          <h1>For Loop:</h1>
+          <p>When you know exactly how many times you want to loop through a block of code, use the <span>for</span> loop instead of a <span>while</span> loop:</p>
+          <h3>Syntax</h3>
+          <code><pre>
+       for (statement 1; statement 2; statement 3) {
+
+       <span class="green">// code block to be executed</span>
+
+       }</pre></code>
+       <p><strong>Statement 1</strong> is executed (one time) before the execution of the code block.</p>
+       <p><strong>Statement 2</strong> defines the condition for executing the code block.</p>
+       <p><strong>Statement 3</strong> is executed (every time) after the code block has been executed.</p>
+       <h1>Nested Loops:</h1>
+       <p>It is also possible to place a loop inside another loop. This is called a <strong>nested loop</strong>.</p>
+       <p>The "inner loop" will be executed one time for each iteration of the "outer loop":</p>
+       <h3>Example</h3>
+       <code><pre>
+      int i, j;
+
+      <span class="green">// Outer loop</span>
+
+      for (i = 1; i <= 2; ++i) {
+
+        printf("Outer: %d\n", i);        <span class="green">// Executes 2 times</span>
+
+      <span class="green">// Inner loop</span>
+
+      for (j = 1; j <= 3; ++j) {
+
+         printf(" Inner: %d\n", j);      <span class="green">// Executes 6 times (2 * 3)</span>
+      }
+
+    }</pre></code>
+         </article>
+       </section>
+       <section id="Break_and_Continue" class="main-section">
+          <header>Break and Continue</header>
+          <article>
+            <h1>Break:</h1>
+              <p>Break was used to "jump out" of a <span><a href="#Switch" class="break-switch">switch</a></span> statement</p>
+              <p>The <span>break</span> statement can also be used to jump out of a <strong>loop</strong>.</p>
+            <h1>Continue:</h1>
+              <p>The <span>continue</span> statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.</p>
+            <h3>Example:</h3>
+            <code><pre>
+        int i;
+
+        for (i = 0; i < 10; i++) {
+
+          if (i == 4) {
+            continue;
+
+          }
+
+          printf("%d\n", i);
+
+        }</pre></code>  
+             <h4>You can also use <span>break</span> and <span>Continue</span> in while loops</h4>
+          </article>  
+      </section>
+      <section id="Arrays" class="main-section">
+        <header>Arrays</header>
+        <article>
+          <ul>
+           <li>Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.</li>
+           <li>To create an array, define the data type (like <span>int</span>) and specify the name of the array followed by <strong>square brackets []</strong>.</li>
+           <li>To insert values to it, use a comma-separated list, inside curly braces:</li>
+          </ul>
+          <code><pre>
+     int myNumbers[] = {25, 50, 75, 100};</pre></code>
+          <h1>Access the Elements of an Array:</h1>
+          <p>To access an array element, refer to its <strong>index number</strong> where Array indexes start with <strong>0</strong>: [0] is the first element. [1] is the second element, etc.</p>
+          <p>This statement accesses the value of the <strong>first element [0]</strong> in <span>myNumbers</span>:</p>
+
+          <h3>Example:</h3>
+          <code><pre>
+     int myNumbers[] = {25, 50, 75, 100};
+
+     printf("%d", myNumbers[0]);
+
+     <span class="green">// Outputs 25</span></pre></code>
+          <h1>Change an Array Element:</h1>
+          <p>To change the value of a specific element, refer to the index number:</p>
+          <code><pre>
+     int myNumbers[] = {25, 50, 75, 100};
+     myNumbers[0] = 33;
+
+     printf("%d", myNumbers[0]);
+
+     <span class="green">// Now outputs 33 instead of 25</span></pre></code>
+        <h1>Multidimensional Arrays:</h1>
+         <p>A multidimensional array is basically an array of arrays.</p>
+         <p>Arrays can have any number of dimensions. In this chapter, we will introduce the most common; two-dimensional arrays (2D).</p>
+        <h1>Two-Dimensional Arrays:</h1>
+         <p>A 2D array is also known as a matrix (a table of rows and columns).To create a 2D array of integers, take a look at the following example:</p>
+         <code><pre>
+       int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };</pre></code>
+         <p>The first dimension represents the number of rows <strong>[2]</strong>, while the second dimension represents the number of columns <strong>[3]</strong>. The values are placed in row-order, and can be visualized like this:</p>
+         <div class="arrays">
+           <img src="https://i.pinimg.com/750x/48/c6/a8/48c6a8cf791346d9e97f62a87c68d6bc.jpg" alt="2d-array table representation">
+           </div>
+          </article>
+        </section>
+       <section id="Strings" class="main-section">
+        <header>Strings</header>
+        <article>
+          <p>Strings are used for storing text/characters.</p>
+          <p>To output the string, you can use the <span>printf()</span> function together with the format specifier %s to tell C that we are now working with strings:</p>
+           <code><pre>
+      char greetings[] = "Hello World!";
+      printf("%s", greetings);</pre></code>
+      <h1>Strings-Special Characters:</h1>
+         <p>Because strings must be written within quotes, C will misunderstand this string, and generate an error.The solution to avoid this problem, is to use the <strong>backslash escape character</strong></p>
+         <p>The backslash (\) escape character turns special characters into string characters:</p>
+         <div class="strings-table">
+           <img src="https://i.pinimg.com/750x/d0/fd/92/d0fd923d7ecb6ab3a02370705a02b1d0.jpg" alt="Backslash escape characters">
+           </div>
+           <p>The sequence <span>\"</span> inserts a double quote in a string:</p>
+           <code><pre>
+     char txt[] = "We are the so-called \"Vikings\" from the north.";</pre></code>
+     <p>The sequence <span>\'</span> inserts a single quote in a string:</p>
+     <code><pre>
+      char txt[] = "It\'s alright.";</pre></code>
+      <p>The sequence <span>\\</span>  inserts a single backslash in a string:</p>
+      <code><pre>
+      char txt[] = "The character \\ is called backslash.";</pre></code>
+      <h4>Other popular escape characters in C are:</h4>
+      <div class="strings-table">
+        <img src="https://i.pinimg.com/750x/71/da/fc/71dafc670539147929f9e9d5ef53a5d6.jpg" alt="Escape Characters">
+        </div>
+        <h1>String Functions:</h1>
+        <p>C also has many useful string functions, which can be used to perform certain operations on strings; to use them, you must include the <<a>string.h></a> header file in your program:
+        <pre><code>        #include &ltstring.h></code></pre>
+
+          <h1>String Length:</h1>
+          <p>To get the length of a string, you can use the <span>strlen()</span> function:</p>
+          <p>Note that <span>sizeof</span> and <span>strlen</span> behaves differently, as <span>sizeof</span> also includes the <span>\0</span> character when counting:
+          <h3>Example:</h3>
+          <code><pre>
+       char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+       
+       printf("%d", strlen(alphabet));   <span class="green">// 26</span>
+       printf("%d", sizeof(alphabet));   <span class="green">// 27</span></pre></code>
+       <h4>It is also important that <span>sizeof</span> will always return the memory size (in bytes), and not the actual string length</h4>
+       <h4>Some Important points about strings:</h4>
+       <ul>
+         <li>To concatenate (combine) two strings, you can use the strcat() function</li>
+         <li>To copy the value of one string to another, you can use the strcpy() function</li>
+         <li>To compare two strings, you can use the strcmp() function, it returns <span>0</span> if the two strings are equal, otherwise a value that is not 0</li>
+           </ul>
+          </article>
+      </section>
+       <section id="User_Input" class="main-section">
+        <header>User Input</header>
+        <article>
+          <p>To get <strong>user input</strong>, you can use the <span>scanf()</span> function:</p>
+          <h3>Example:</h3>
+          <p>Output a number entered by the user:<p>
+            <pre><code>
+       int Num;
+       printf("Type a number: \n")
+       scanf("%d", &Num);
+       printf("Your number is: %d", Num);
+       </code></pre>
+       <h1>Multiple Inputs:</h1>
+       <p>The <span>scanf()</span> function also allow multiple inputs (an integer and a character in the following example):</p>
+       <h3>Example:</h3>
+       <code><pre>
+       int Num;
+       char Alpha;
+     
+       printf("Type a number AND a character and press enter: \n"); 
+       
+       scanf("%d %c", &Num, %Alpha);
+
+       printf("Your Number is: %d"\n," Num);
+       printf("Your character is: %c\n", Aplha);   
+</pre></code>
+        <h4>However, the <span>scanf()</span> function has some limitations :</h4>
+          <ul>It considers,
+            <li>space</li> 
+            <li>whitespace</li>
+            <li>tabs, as terminating character, which means that it can only display a single word(even if you type many words)</li>
+            </ul>
+            <h1>Memory Address:</h1>
+            <ul>
+              <li>When a variable is created in C, a memory address is assigned to the variable.</li>
+              <li>The memory address is the location of where the variable is stored on the computer.</li>
+              <li>When we assign a value to the variable, it is stored in this memory address.</li>
+              <li>To access it, use the reference operator (<span>&</span>), and the result represents when the variable is stored:</li>
+              </ul>
+              <h3>Example:</h3>
+              <code><pre>
+       int Age = 17;
+       printf("%p", &Age);          <span class="green">//output: 0x7ffe5367e044</span>
+                </pre></code>
+                <p>The memory address is in hexadecimal form (0x..). You will probably not get the dame result in your program, as this depends on where the variable is stored on your computer. 
+          </article>  
+      </section>
+      <section id="Pointers" class="main-section">
+        <header>Pointers</header>
+        <article>
+          <ul>
+            <li>A <strong>pointer</strong> is a variable that stores the memory address of another variable as its value.</li>
+            <li>A <strong>pointer variable points</strong> to a <strong>data type</strong> (like <span>int</span>) of the same type, and is created with the <span>*</span> operator.</li>
+            </ul>
+            <pre><code>
+       int Age= 17;
+       int* ptr = &Age;
+
+       printf("%d\n", Age);         <span class="green">//output: 17</span>
+              
+       printf("%p\n", &Age);        <span class="green">//output: 0x7fffd2327344</span>
+        
+       pritnf("%p\n", ptr);         <span class="green">//output: 0x7fffd2327344</span>
+              </code></pre>
+              <h4>Example explained:</h4>
+              <ul>
+                <li>Create a pointer variable with the name <span>ptr</span>, that <strong>points to</strong> an <span>int</span> variable (<span>myAge</span>). Note that the type of the pointer has to match the type of the variable you're working with (<span>int</span> in the example).</li>
+                <li>Use the <span>&</span> operator to store the memory address of the <span>myAge</span> variable, and assign it to the pointer.</li>
+                <li>Now, <span>ptr</span> holds the value of <span>myAge</span>'s memory address.</li>
+                </ul>
+                <h1>Dereference:</h1>
+                <p>We used the pointer variable to get the memory address of a variable (used together with the <span>&</span> <strong>reference</strong> operator); you can also get the value of the variable the pointer points to, by using the <span>*</span> operator (the <strong>dereference</strong> operator):</p>
+                <code><pre>
+       int Age: 17;
+       int *ptr: &Age;
+
+       printf("%p\n", ptr);         <span class="green">//output: 0x7fffd2327344</span>    
+
+       printf("%d\n", *ptr);        <span class="green">//output: 43</span>
+                  </pre></code>
+                  <h1>Pointers and Arrays:</h1>
+                  <p>You can also use pointers to access <a class="array" href="#Arrays">arrays</a>.
+                  <h3>Example:</h3>
+                  <p>Instead of printing the value of each array element, let's print the memory address of each array element:</p>
+                  <code><pre>
+       int myNumbers[4] = {25, 50, 75, 100};
+       int i;
+                                              <span class="green">//output: 0x7ffe475c6650</span>
+       for (i = 0; i < 4; i++) {                        <span class="green">0x7ffe475c6654</span>
+                                                        <span class="green">0x7ffe475c6658</span>
+         printf("%p\n", &myNumbers[i]);                 <span class="green">0x7ffe475c665c</span>
+
+       }             
+                    </pre></code>
+          <h4>Note that the last number of each of the elements memory address is different, with an addition of 4. It is because the size of an <span>int</span> type is typically 4 bytes.
+          </article>
+        </section>
+       <section id="Functions" class="main-section">
+        <header>Functions</header>
+        <article>
+          <p>A function is a block of code which only runs when it is called.</p>
+          <ul>
+            <li>You can pass data, known as parameters, into a function.</li>
+            <li>Functions are used to perform certain actions, and they are important for reusing code: Define the code once, and use it many times.</li>
+            </ul>
+            <h1>Predefined Functions</h1>
+            <p><span>main()</span> is a function, which is used to execute codem and <span>printf()</span> is a function; used to output /print text to the screen:</p>
+            <h1>Create a Function:</h1>
+            <p>To create (often referred to as declare) your own function, specify the name of the function, followed by parentheses <span>()</span> and curly brackets <span>{}</span>:</p>
+            <h3>Syntax:</h3>
+            <code><pre>
+
+       void myFunction() {
+
+          <span class="green">//code to be executed</span>
+
+       }   </pre></code>
+            <h4>Example Explained:</h4>
+            <ul>
+              <li><span>myFunction()</span> is the name of the function</li>
+              <li><span>void</span> means that the function does not have a return value.</li>
+              <li>Inside the function (the body), add code that defines what the function should do</li> 
+              </ul>
+              <h1>Call a Function:</h1>
+              <p>Declared functions are not executed immediately. They are "saved for later use", and will be executed when they are called.</p>
+              <p>To call a function, write the function's name followed by two parentheses <span>()</span> and a semicolon <span>;</span></p>
+              <h3>Example</h3>
+              <code><pre>
+       void myFunction() {
+         
+         printf("Hello!");
+       }
+
+       int main() {
+          
+          myFunction();<span class="green">// call the function</span>
+          return 0;    
+
+       }                       <span class="green">//output: "Hello!"</span></pre></code>
+            </pre></code>
+            <h1>Parameters And Arguements:</h1>
+            <p>Information can be passed to functions as a parameter. Parameters act as variables inside the function.</p>
+            <p>Parameters are specified after the function name, inside the parentheses. You can add as many parameters as you want, just separate them with a comma:</p>
+            <h3>Syntax:</h3>
+            <code><pre>
+       returnType functionName(parameter1, parameter2, parameter3) {
+   
+           <span class="green">// code to be executed</span>
+
+       }           </pre></code>
+              <p>The following function that takes a <a class="strings" href="#Strings">string of characters</a> with name as parameter. When the function is called, we pass along a name, which is used inside the function to print "Hello" and the name of each person.</p>
+              <h3>Example</h3>
+              <code><pre>
+       void myFunction(char name[]) {
+         
+            printf("Hello %s\n", name);
+       }
+
+       int main() {
+
+         myFunction("Liam");
+The void keyword, us         myFunction("Jenny");
+         myFunction("Anja");
+
+         return 0;
+      }
+
+ <span class="green">// Hello Liam</span>
+ <span class="green">// Hello Jenny</span>
+ <span class="green">// Hello Anja</span></pre></code>
+            <h1>Multiple Parameters:</h1>
+            <p>Inside the function, you can as many parameters as you want:</p>
+            <h3>Example:</h3>
+            <code><pre>
+      void Function(char name[], int age) {
+       
+        printf("Hello %s. You are %d years old. \n", name, age);
+      
+      }
+
+      int main() {
+         Function("Liam", 3);
+         Function("Jenny", 14);
+         Function("Anja", 30);
+      }        
+  
+Output:
+
+<span class="green">//Hello Liam. You are 3 years old.</span>
+<span class="green">//Hello Jenny. You are 14 years old.</span>
+<span class="green">//Hello Anja. You are 30 years old.</span></pre></code>
+            <h1>Return Values:</h1>
+            <p>The <span>void></span> keyword, used in the previous examples, indicates that the function should not return a value. If you want the function to return a value, you can use a data type (such as <span>int</span> or <span>float</span>, etc.) instead of <span>void</span>, and use the <span>return</span> keyword inside the function:   </p>                  
+           <h3>Example:</h3>
+           <code><pre>
+      int Function(int x) {
+        return 5 + x;
+      }
+
+      int main() {
+        printf("result is : %d",Function(3));
+        return 0;
+
+      }
+    
+<span class="green">//outputs 8 (5 + 3)</span></pre></code>
+            <h1>Function Declaration and Definition:</h1>
+            <p>A function consist of two parts:</p>
+            <ul>
+              <li><strong>Declaration:</strong> the function's name, return type, and parameters (if any)</li>
+              <li><strong>Defination:</strong> the body of the function (code to be executed)</li>
+              </ul>
+              <p>For code optimization, it is recommended to separate the declaration and the definition of the function.</p>
+              <p>ou will often see C programs that have function declaration above <span>main()</span>, and function definition below <span>main()</span>. This will make the code better organized and easier to read:</p>
+              <code><pre>
+      void Function();    <span class="green">//Function declaration</span>
+
+      <span class="green">// The main method</span>
+      int main() {
+
+        Function();       <span class="green">// call the function</span>
+        return 0;
+
+      }
+
+      <span class="green">// Function defination</span>
+      void Function() {
+
+        printf("I just got executed");
+
+      }</pre></code>
+            <h1>Recursion</h1>
+            <p>Recursion is the technique of making a function call itself. This technique provides a way to break complicated problems down into simple problems which are easier to solve.</p>
+            <p>recursion may be difficult to understand. The best way to figure out how it works is to experiment with it.</p>
+            <h4>Adding two numbers together is easy to do, but adding a range of numbers is more complicated. In the following example, recursion is used to add range of numbers together by breaking it down into the simple task of adding two numbers:</h4>
+            <code><pre>
+       int sum(int k);
+
+       int main() {
+       int result = sum(10);
+       printf("%d", result);
+
+       return 0;
+     }
+
+       int sum(int k) {
+
+       if (k > 0) {
+       return k + sum(k - 1);
+
+     } else {
+      return 0;
+     }
+   } </pre></code>
+         <h1>Math Functions:</h1>
+         <p>There is also a list of math functions available, that allows to perform mathematical tasks on numbers.</p>
+         <p>To use them ,you must include the <span>math.h</span><strong>header file</strong> in your program: </p>
+         <code><pre>
+   #include <<a class="header">math.h></a></pre></code>
+         <h1>Square Root:</h1>
+         <p>To find the square root of a number , use the <span>sqrt()</span> function:</p>
+         <code><pre>
+   printf("%f", sqrt(16));  </pre></code>
+         <h1>Round the Number:</h1>
+         <p>The <span>ceil()</span> function rounds a number upwards to its nearest integer, and the <span>floor()</span> method rounds a number downwards to its nearest integer, and returns the result:</p>
+         <h3>Example:</h3>
+         <code><pre>
+   printf("%f", ceil(1.4));           <span class="green">//output 2</span>
+
+   printf("%f", floor(1.4));          <span class="green">//output 1</span></pre></code>
+          <h1>Power:</h1>
+          <p>The <span>pow()</span> function returns the value of x to the power of y <strong><em>(x<sup>y</sup>)</em></strong>
+          <h3>Example:</h3>
+          <code><pre>
+   printf("%f", pow(4, 3));</pre></code>
+          <h1>Other Math Functions:</h1>
+          <div class="math-table">
+            <img src="https://i.pinimg.com/750x/1d/34/b1/1d34b1af1beacc7172803d5fa4941db3.jpg" alt="Math Functions Table">
+           </div>
+          </article>     
+      </section>
+      <section id="Files" class="main-section">
+        <header>Files</header>
+        <article>
+          <p>In C, you can create, open , read and writ eto files by declaring a <a href="#Pointers">pointer</a> of type <span>FILE</span>, and use the <span>fopen()</span> function:</p>
+          <code><pre>
+   FILE *fptr
+   fptr = fopen(filename, mode);         </pre></code>
+          <p><span>FILE</span> is basically a data type, and we need to create a pointer variable to work with it (<span>fptr</span>). For now, this line is not important. It's jusr something you need when working with files.</p>
+          <p>To actually open a file, use the  <span> fopen()</span> function, which takes two parameters:
+           <div id="file-table">
+             <img src="https://i.pinimg.com/750x/e8/df/1c/e8df1c27b09f4dcf95f811fb2bd170ed.jpg" alt="File parameter table">
+             </div>
+             <h1>Create a File:</h1>
+             <p>To create a file, you can use the <span>w</span> mode inside the <span>fopen()</span> function.
+             <p> The <span>W</span> mode is used to write as file. However, if the file does not exist, it will create one for you:</p>
+             <h3>Example</h3>
+             <code><pre>
+   FILE *fptr;
+   
+   <span class="green">//Create a file</span>
+   fptr = fopen("filename.txt", "w");
+
+   <span class="green">//Close the file</span>
+   fclose(fptr);</pre></code> 
+               <h1>Write To a File:</h1>
+               <p>The <span>w</span> mode means that the file is opened for <strong>writing</strong>. To inseert contentto it, you can use the <span>fprintf()</span> function and add the pointer variable <span>fptr()</span> function and add the pointer variable and some text:</p> 
+               <code><pre>
+   FILE *fptr;
+
+   <span class="green">// Open a file in writing mode</span>
+   fptr = fopen("filename.txt", "w");
+
+   <span class="green">// Write some text to the file</span>
+   fprintf(fptr, "some text");
+
+   <span class="green">// Close the file</span>
+   fclose(fptr);</pre></code>
+           <h1>Append Content to a File:</h1>
+           <p>If you want to add content to a file without deleting the old content, you can use the <span>a</span> mode.</p>
+           <p>The <span>a</span> mode appends content at the content at the end of the file:</p>
+           <code><pre>
+  FILE **FPTR;
+
+  <span class="green">// open a file in append mode</span>
+  fptr = =fopen("filename.txt, "a"");
+
+  <span class="green">//Append some text to the file</span>
+  fprintf(fptr, "\nHi everybody");
+
+  <span class="green">// Close the fie</span>
+  fclose(fptr);</pre></code>
+              <h1>Read a File:</h1>
+              <p>To <strong>read</strong> from a file, you can use the <span>r</span> mode:</p>
+              <h3>Example</h3>
+              <code><pre>
+   FILE *fptr;
+
+   <span class="green">// Open a file in read mode</span>
+   fptr = fopen("filename.txt", "r");             
+                </pre></code> 
+              <p>This will make the <span>filename.txt</span> opened for reading</p>
+              <h3>To create a string that can store upto 100 characters:</h3>
+              <code><pre>
+   FILE *fptr;
+
+   <span class="green">// Open a file in read mode</span>
+   fptr = fopen("filename.txt","r");
+
+   <span class="green">// Store the content of the file</span>
+   char mystring[100];</pre></code>
+              <p>In order to read the content of <span>filename.txt</span>, we can use the <span>fgets()</span> function.</p>
+              <p>The <span>fgets()</span> function takes three parameters:</p>
+              <code><pre>
+   fgets (myString, 100, fptr);</pre></code>
+           <ol>
+             <li>The first parameter specifies where to store the file content, which will be in the <span>myString</span> array we just created.</li>
+             <li>The second parameter specifies the maximum size of data to read, which should match the size of <span>myString</span> (<span>100</span>).</li>
+             <li>The third parameter requires a file pointer that is used to read the file (<span>fptr</span> in our example).</li>
+             </ol>
+             <p>Now, we can print the string, which will output the content of the file:</p>
+            <code><pre>
+   FILE *fptr;
+
+   <span class="green">// Open a file in read mode</span>
+   fptr = fopen("filename.txt", "r");
+
+   <span class="green">//Store the content of the file></span>
+   char String[100];
+
+   <span class="green">// Read the content and store it inside String</span>
+   fgets(String, 100 ,fptr);
+
+   <span class="green">// Print the file content</span>
+   printf("%s", String);
+
+   <span class="green">// Close the path</span>
+   fclose(fptr);
+              </pre></code>
+          </article>  
+      </section>
+       <section id="Structure" class="main-section">
+        <header>Structure</header>
+        <article>
+          <p>Structures (also called structs) are a way to group several related variables into one place. Each variable in the structure is known as a <strong>member</strong> of the structure.</p>
+          <p>Ulike, <a href="#Arrays">array</a>, a structure can contain many different data types(<strong>int, float, char etc.</strong>)</p>
+          <h1>Create a Structure:</h1>
+          <p>You can create a structure by using the <span>struct</span> keyword and declare each of its memebers inside curly braces<strong>:</strong></p>
+          <code><pre>
+   struct Mystructure {            <span class="green">//Structure declaration</span>
+
+        int myNum;                 <span class="green">// Member (int variable)</span>
+
+        char myLetter;             <span class="green">// Member (char variable)</span>
+
+   }; <span class="green">End the structure with a semi colon</span></pre></code>
+   <p>to access the structure, you must create a variable of it, So use the <span>struct</span> keyword inside the <span>main()</span> method, followed by the name of the structure and then the name of the structure variable:</p>
+        <h3>Create a struct variable with the name "s1":</h3>
+        <code><pre>
+   struct myStructure {
+        
+        int myNum;
+        char myLetter;
+
+   };
+
+   int main() {
+    
+        struct myStructure s1;
+        return 0;
+
+   }</pre></code>
+           <h1>Access Structure Memeber:</h1>
+           <p>To access members of a structure, use the dot syntax;</p>
+           <code><pre>
+   <span class="green">// Create a structure called myStructure</span>
+
+   Struct myStructure {
+
+        int myNum;
+        char myLetter;
+
+   };
+
+   int main() {
+
+     <span class="green">// Create a structure variable of myStructure called <em>s1</em></span>
+     struct myStructure s1;
+
+     <span class="green">// Assign values to members of s1</span>
+     s1.myNum = 13;
+     s1.myLetter = 'B';
+
+     <span class="green">// Print Values</span>
+     printf("My number: %d\n", s1.myNum);
+     printf("My letter: %c\n", s1.myLetter);
+
+     return0;
+    
+   }</pre></code>
+            <h1>Simple Syntax:</h1>
+            <p>To assign values to members of a structure variable at declaration time, in a single line, just insert the values in a comma-separated list inside curly braces <span>{}</span>. Note that you don't have to use the <span>strcpy()</span> function for string values with this technique:</p>
+            <code><pre>
+   <span class="green">// Create a structure</span> 
+   struct mySructure {
+        int myNum;
+        char myletter;
+        cahr myString[30];
+   };
+
+   int main() {
+
+     <span class="green">// Create a structure variable ans assign values to it</span>
+     struct myStructure s1 = {13, B, "Some text"};
+
+     <span class="green">// Print variables</span>
+     printf("%d %c %s", s1.myNum, s1.myLetter, s1.myString);
+
+     return 0;
+
+   }</pre></code>
+              <h1>Copy Structure</h1>
+              <p>You can assign values of s1 are copied to s2:</p>
+              <code><pre>
+   struct myStructure s1 = {13, 'B', "Some text"};
+   struct myStructure s2;
+
+     s2 = s1;</pre></code>
+     <h1>Modify Structures:</h1>
+     <p>To change/modify a value, you can use the dot syntax(<span>.</span>), and to modify a string value, the <span>strcpy()</span> function is useful again:</p>
+     <code><pre>
+   struct myStructure {
+
+     int myNum;
+     char myLetter;
+     char myString[30];    
+
+   };
+
+   int main()  {
+
+       <span class="green">// Create a structure variable ans assign values to it</span>    
+        struct myStructure s1 = {13, 'B', "Some text"};
+
+        <span class="green">// Print values</span>
+        printf("%d %c %s", s1.myNum, s1.myLetter, s1.myString);
+
+        return 0;
+   
+   }</pre></code>
+          </article>  
+      </section>
+      <section id="Enums" class="main-section">
+        <header>Enums</header> 
+        <article>
+          <p>An <strong>enum</strong> is a special type that represent a group of constants (unchangeable values).</p>
+          <p>To create an enum, use the <span>enum</span> keyword, followed by the name of the enum, and seperate the enum items with a comma:</p>
+          <code><rep>
+   enum level {
+     LOW, 
+     MEDIUM,
+     HIGH
+   };</pre></code>
+          <p>To access the enum, you must create a variable of it. Inside the <span>main()</span> method, specify the <span>enum</span> keyword. followed by the name of the enum(<span>Level</span>) and then the name of the enum variable:</p>
+          <code><pre>
+   enum Level myVar;</pre></code>
+          <p>We can assign values to the enum, where the assigned value must be one of the items inside the enum (<span>LOW</span>, <span>MEDIUM</span> or <span>HIGH</span>)</p>
+          <code><pre>
+   enum Level myVar = MEDIUM;</pre></code>
+          <p>By default, the first item (<span>LOW</span>) has the value <span>0</span>, the second (<span>MEDIUM</span>) has the value <span>1</span>, etc.</p>
+          <h1>Change Values:</h1>
+          <p>The first item of an enum has the value 0. The second has the value 1, and so on. To make more sense of the values, you can easily change them:</p>
+          <code><pre>
+   enum Level {
+     LOW = 25,
+     MEDIUM = 50,
+     HIGH = 75
+   }; 
+
+
+   int main() {
+
+     enum Level myVar = MEDIUM;
+
+     printf("%d", myVar);
+
+     return 0;
+
+   }</pre></code>
+            <h1>Enum in a Switch Statement</h1>
+            <p>Enums are often used in switch statements to check for corresponding values:</p>
+            <code><pre>
+   enum Level {
+
+     LOW = 1,
+     MEDIUM,
+     HIGH
+
+  };
+
+   int main() {
+
+   enum Level myVar = MEDIUM;
+
+   switch (myVar) {
+
+     case 1: printf("Low Level"); break;
+      
+     case 2: printf("Medium level"); break;
+            
+     case 3: printf("High level"); break;
+      
+     }
+
+     return 0;
+
+  }</pre></code>
+          </article> 
+      </section>
+      <section id="Reference" class="main-section">
+        <header>Reference</header>
+      <article>
+           <ul>
+             <li>The entirety of the documentation on this page has been sourced from <a href="https://www.w3schools.com/c/c_intro.php" alt="w3 schools">W3 Schools</a>.
+             </ul>
+        </article>
+      </section>       
+    </main>
+  </body>
+</html>
